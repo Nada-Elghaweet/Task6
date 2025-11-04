@@ -1,7 +1,8 @@
 name: task6
 on: 
     push:
-       branches:["master"]
+       branches:
+        - master
 
 jobs:
     test:
@@ -10,8 +11,9 @@ jobs:
       steps:
 
         - uses: actions/checkout@v4
-        - name: run code
+        - name: install requirements
           run : pip install -r requirements.txt
+        - name: run code
           run: python -m unittest test_calculator
 
 
